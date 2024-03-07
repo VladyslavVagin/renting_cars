@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/renting_cars/static/css/main.7bdc406e.css",
-    "main.js": "/renting_cars/static/js/main.17e5db97.js",
+    "main.css": "/renting_cars/static/css/main.320114ce.css",
+    "main.js": "/renting_cars/static/js/main.944478e4.js",
+    "static/media/yellow.jpg": "/renting_cars/static/media/yellow.fcf331209254d7adcba7.jpg",
     "static/media/Inter-Medium.woff": "/renting_cars/static/media/Inter-Medium.f54039e3202e9ad4fe3c.woff",
+    "static/media/porshe.jpg": "/renting_cars/static/media/porshe.123528564dcf9b074b7c.jpg",
     "static/media/Inter-Medium.woff2": "/renting_cars/static/media/Inter-Medium.2e49fa70be6011988c79.woff2",
     "static/media/Montserrat-SemiBold.woff": "/renting_cars/static/media/Montserrat-SemiBold.5443633e4f3f34d55fb5.woff",
     "static/media/Montserrat-Regular.woff": "/renting_cars/static/media/Montserrat-Regular.0dea8d0860451ddab7d4.woff",
-    "static/media/car-color.jpg": "/renting_cars/static/media/car-color.abe700c144aea92499bb.jpg",
     "static/media/Montserrat-SemiBold.woff2": "/renting_cars/static/media/Montserrat-SemiBold.1da0758f646febcdf866.woff2",
     "static/media/Montserrat-Regular.woff2": "/renting_cars/static/media/Montserrat-Regular.df7b9b6f89ccf3a354d3.woff2",
     "static/media/Manrope-SemiBold.woff": "/renting_cars/static/media/Manrope-SemiBold.d804553340fb5764fc65.woff",
@@ -17,11 +18,11 @@
     "static/media/Manrope-Medium.woff2": "/renting_cars/static/media/Manrope-Medium.87883325178df25a3509.woff2",
     "static/media/icons.svg": "/renting_cars/static/media/icons.25954e189b01bf420aa8dca65d5723e4.svg",
     "index.html": "/renting_cars/index.html",
-    "main.7bdc406e.css.map": "/renting_cars/static/css/main.7bdc406e.css.map",
-    "main.17e5db97.js.map": "/renting_cars/static/js/main.17e5db97.js.map"
+    "main.320114ce.css.map": "/renting_cars/static/css/main.320114ce.css.map",
+    "main.944478e4.js.map": "/renting_cars/static/js/main.944478e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bdc406e.css",
-    "static/js/main.17e5db97.js"
+    "static/css/main.320114ce.css",
+    "static/js/main.944478e4.js"
   ]
 }

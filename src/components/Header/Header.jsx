@@ -1,28 +1,37 @@
-import { NavLink } from "react-router-dom"
-import sprite from "../../icons/icons.svg"
-import { HeaderMain, ContainerHeader, IconSvg, MenuNav } from "./Header.styled"
-
+import { Link } from "react-router-dom";
+import sprite from "../../icons/icons.svg";
+import {
+  HeaderMain,
+  ContainerHeader,
+  IconSvg,
+  MenuNav,
+  LogoText,
+  Logo,
+  StyledLink,
+} from "./Header.styled";
 
 const Header = () => {
   return (
     <HeaderMain>
-        <ContainerHeader>
+      <ContainerHeader>
         <div>
-            <NavLink to={'/home'}>
-                <IconSvg width={32} height={32}>
-                    <use xlinkHref={`${sprite}#icon-automobile`}></use>
-                </IconSvg>
-                <p>VAGA_CARS</p>
-            </NavLink>
+          <Link to={"/home"}>
+            <Logo>
+              <IconSvg width={32} height={32}>
+                <use xlinkHref={`${sprite}#icon-automobile`}></use>
+              </IconSvg>
+              <LogoText>VCARS</LogoText>
+            </Logo>
+          </Link>
         </div>
         <MenuNav>
-            <NavLink to={'/home'}>Головна</NavLink>
-            <NavLink to={'/cars'}>Оголошення</NavLink>
-            <NavLink to={'/favorites'}>Моя колекція</NavLink>
+          <StyledLink to={"/home"}>Головна</StyledLink>
+          <StyledLink to={"/cars"}>Оголошення</StyledLink>
+          <StyledLink to={"/favorites"}>Моя колекція</StyledLink>
         </MenuNav>
-        </ContainerHeader>
+      </ContainerHeader>
     </HeaderMain>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

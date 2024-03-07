@@ -51,3 +51,16 @@
   font-style: normal;
   font-display: swap;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,52 +1,52 @@
 @font-face {
-  font-family: 'Manrope';
-  src: url('../src/fonts/Manrope-SemiBold.woff2') format('woff2'),
-      url('../src/fonts/Manrope-SemiBold.woff') format('woff');
+  font-family: "Manrope";
+  src: url("../src/fonts/Manrope-SemiBold.woff2") format("woff2"),
+    url("../src/fonts/Manrope-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: url('../src/fonts/Manrope-Regular.woff2') format('woff2'),
-      url('../src/fonts/Manrope-Regular.woff') format('woff');
+  font-family: "Manrope";
+  src: url("../src/fonts/Manrope-Regular.woff2") format("woff2"),
+    url("../src/fonts/Manrope-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: url('../src/fonts/Manrope-Medium.woff2') format('woff2'),
-      url('../src/fonts/Manrope-Medium.woff') format('woff');
+  font-family: "Manrope";
+  src: url("../src/fonts/Manrope-Medium.woff2") format("woff2"),
+    url("../src/fonts/Manrope-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../src/fonts/Montserrat-Regular.woff2') format('woff2'),
-      url('../src/fonts/Montserrat-Regular.woff') format('woff');
+  font-family: "Montserrat";
+  src: url("../src/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../src/fonts/Montserrat-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../src/fonts/Montserrat-SemiBold.woff2') format('woff2'),
-      url('../src/fonts/Montserrat-SemiBold.woff') format('woff');
+  font-family: "Montserrat";
+  src: url("../src/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("../src/fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../src/fonts/Inter-Medium.woff2') format('woff2'),
-      url('../src/fonts/Inter-Medium.woff') format('woff');
+  font-family: "Inter";
+  src: url("../src/fonts/Inter-Medium.woff2") format("woff2"),
+    url("../src/fonts/Inter-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -57,10 +57,30 @@
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }

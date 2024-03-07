@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const SectionBenefits = styled.section`
-  background-color: #fbab7e;
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  background-color: #302c2a;
+  background-image: linear-gradient(62deg, #302c2a 0%, #302c2a 100%);
+  color: antiquewhite;
+  padding: 40px 0;
 `;
 
 export const TitleBenefits = styled.h2`

@@ -23,24 +23,23 @@ const Benefits = () => {
               </BenefitItem>
               <BenefitItem>
                 <MarkOk>&#10003;</MarkOk>
-                <p>
-                  Технічний супровід або заміна авто на випадок технічних
-                  проблем
-                </p>
-              </BenefitItem>
-              <BenefitItem>
-                <MarkOk>&#10003;</MarkOk>
                 <p>Аренда авто разом з водієм</p>
               </BenefitItem>
               <BenefitItem>
                 <MarkOk>&#10003;</MarkOk>
-                <p>
-                  Гнучкі програми оплати аренди та знижки постійним клієнтам
-                </p>
+                <p>Військовим знижки -50% від вказаної ціни на сайті</p>
               </BenefitItem>
               <BenefitItem>
                 <MarkOk>&#10003;</MarkOk>
-                <p>Військовим знижки -50% від вказаної ціни на сайті</p>
+                <p>Знижки та акції для постійних клиєнтів</p>
+              </BenefitItem>
+              <BenefitItem>
+                <MarkOk>&#10003;</MarkOk>
+                <p>Технічний супровід на випадок незначних технічних проблем</p>
+              </BenefitItem>
+              <BenefitItem>
+                <MarkOk>&#10003;</MarkOk>
+                <p>Заміна авто на випадок значних технічних проблем</p>
               </BenefitItem>
             </ListBenefits>
           </div>

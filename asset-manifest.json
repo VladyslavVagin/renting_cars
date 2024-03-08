@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/renting_cars/static/css/main.320114ce.css",
-    "main.js": "/renting_cars/static/js/main.507d2123.js",
+    "main.css": "/renting_cars/static/css/main.3faafb7c.css",
+    "main.js": "/renting_cars/static/js/main.20c1a734.js",
     "static/media/yellow.jpg": "/renting_cars/static/media/yellow.fcf331209254d7adcba7.jpg",
     "static/media/Inter-Medium.woff": "/renting_cars/static/media/Inter-Medium.f54039e3202e9ad4fe3c.woff",
     "static/media/porshe.jpg": "/renting_cars/static/media/porshe.123528564dcf9b074b7c.jpg",
@@ -18,11 +18,11 @@
     "static/media/Manrope-Medium.woff2": "/renting_cars/static/media/Manrope-Medium.87883325178df25a3509.woff2",
     "static/media/icons.svg": "/renting_cars/static/media/icons.25954e189b01bf420aa8dca65d5723e4.svg",
     "index.html": "/renting_cars/index.html",
-    "main.320114ce.css.map": "/renting_cars/static/css/main.320114ce.css.map",
-    "main.507d2123.js.map": "/renting_cars/static/js/main.507d2123.js.map"
+    "main.3faafb7c.css.map": "/renting_cars/static/css/main.3faafb7c.css.map",
+    "main.20c1a734.js.map": "/renting_cars/static/js/main.20c1a734.js.map"
   },
   "entrypoints": [
-    "static/css/main.320114ce.css",
-    "static/js/main.507d2123.js"
+    "static/css/main.3faafb7c.css",
+    "static/js/main.20c1a734.js"
   ]
 }

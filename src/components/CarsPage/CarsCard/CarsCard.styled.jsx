@@ -87,4 +87,8 @@ export const LearMoreBtn = styled.button`
   font-size: 14px;
   line-height: 1.42857;
   color: #fff;
+  &:hover,
+  &:focus {
+    background-color: #224bac;
+  }
 `;

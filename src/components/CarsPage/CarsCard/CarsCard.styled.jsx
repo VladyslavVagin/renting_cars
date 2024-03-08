@@ -22,6 +22,10 @@ export const CardTitle = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: #121417;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   span {
     color: #3470ff;

@@ -26,7 +26,7 @@ export const carsSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, {payload}) => {
         state.isLoading = false;
         state.error = null;
-        state.cars = payload;
+        state.cars = [...state.cars, ...payload];
       })
       .addCase(fetchCars.pending, handlePending)
       .addCase(fetchCars.rejected, handleRejected)

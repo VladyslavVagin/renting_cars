@@ -1,18 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import { useDispatch} from 'react-redux';
-import { useEffect } from 'react';
-import { fetchCars } from "../redux/operations";
 import SharedLayout from "./SharedLayout/SharedLayout";
 import Homepage from "pages/Homepage";
 import Cars from "pages/Cars";
 import Favorites from "pages/Favorites";
 
-export function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
+const App = () => {
 
   return (
     <>

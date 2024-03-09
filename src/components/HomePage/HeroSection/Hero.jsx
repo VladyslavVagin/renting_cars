@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <SectionHero>
       <HeroContainer>
-        <Title>VCARS - сучасний сервіс аренди авто в Україні</Title>
-        <TitleText>Доставка авто по всій Україні!!!!!</TitleText>
+        <Title>VCARS - modern service for renting cars in Ukraine</Title>
+        <TitleText>All cars have 100% insurance!!!</TitleText>
       </HeroContainer>
     </SectionHero>
   );

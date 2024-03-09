@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { useCar } from "hook/useCar";
 import {
     CarImage,
     CarInfoList,
@@ -15,6 +16,7 @@ import {
 
 const FavoriteCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
+    const { favorites } = useCar();
   const {
     img,
     description,
@@ -49,7 +51,7 @@ const FavoriteCard = ({ item }) => {
       <ImageContainer>
         <CarImage src={img} alt={description} width={274} height={268} />
         <HeartBtn type="button" id={id}>
-          <svg width={24} height={24}>
+          <svg width={24} height={24} style={favorites.find(car => car.id === id) ? {fill: '#a72f2f', stroke: "#a72f2f"} : {fill: 'transparent'}}>
             <use xlinkHref={`${sprite}#icon-heart`}></use>
           </svg>
         </HeartBtn>

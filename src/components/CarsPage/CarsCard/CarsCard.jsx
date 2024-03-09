@@ -51,14 +51,10 @@ const CarsCard = ({ car }) => {
 
     const addFavorite = (event) => {
       const cardId = event.currentTarget.id;
-      
       if (favorites.find(car => car.id === cardId)) {
-          console.log("This card is already in favorites!");
-          return; // Exit the function early if the card is already in favorites
+          return; 
       }
-  
       dispatch(addCardToFavorite({ id: cardId }));
-      console.log(favorites);
   }
   
   return (
@@ -67,7 +63,7 @@ const CarsCard = ({ car }) => {
         <ImageContainer>
           <CarImage src={img} alt={description} width={274} height={268} />
           <HeartBtn type="button" onClick={addFavorite} id={id}>
-            <svg width={24} height={24}>
+            <svg width={24} height={24} style={favorites.find(car => car.id === id) ? {fill: '#a72f2f', stroke: "#a72f2f"} : {fill: 'transparent'}}>
               <use xlinkHref={`${sprite}#icon-heart`}></use>
             </svg>
           </HeartBtn>

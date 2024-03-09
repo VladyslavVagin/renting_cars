@@ -3,7 +3,6 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import {
   LabelSelect,
-  SearchBtn,
   SearchContainer,
   SelectContainer,
 } from "./SearchBar.styled";
@@ -63,7 +62,6 @@ const SearchBar = ({setFilter}) => {
           }}
         />
       </SelectContainer>
-      <SearchBtn type="button">Search</SearchBtn>
     </SearchContainer>
   );
 };

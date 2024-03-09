@@ -21,22 +21,3 @@ export const LabelSelect = styled.label`
   line-height: 1.28571;
   color: #8a8a89;
 `;
-
-export const SearchBtn = styled.button`
-  outline: none;
-  border: none;
-  background: #3470ff;
-  border-radius: 12px;
-  padding: 14px 44px;
-  width: 136px;
-  height: 48px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 143%;
-  color: #fff;
-  transition: all 400ms ease;
-  &:hover,
-  &:focus {
-    background: #0046e9;
-  }
-`;

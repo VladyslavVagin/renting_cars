@@ -4,12 +4,14 @@ import {
   Card,
   CardTitle,
   CardTitleContainer,
+  HeartBtn,
   ImageContainer,
   LearMoreBtn,
 } from "./CarsCard.styled";
 import { createPortal } from "react-dom";
 import { useState } from "react";
 import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
+import sprite from "icons/icons.svg";
 
 const CarsCard = ({ car }) => {
   const [showModal, setShowModal] = useState(false);
@@ -30,7 +32,7 @@ const CarsCard = ({ car }) => {
   let parts = [];
   let country = "";
   let city = "";
-  let mileageChanged = mileage.toLocaleString('en-US');
+  let mileageChanged = mileage.toLocaleString("en-US");
 
   if (address) {
     parts = address?.split(",");
@@ -46,6 +48,11 @@ const CarsCard = ({ car }) => {
       <Card>
         <ImageContainer>
           <CarImage src={img} alt={description} width={274} height={268} />
+          <HeartBtn type="button">
+            <svg width={24} height={24}>
+              <use xlinkHref={`${sprite}#icon-heart`}></use>
+            </svg>
+          </HeartBtn>
         </ImageContainer>
         <CardTitleContainer>
           <CardTitle>

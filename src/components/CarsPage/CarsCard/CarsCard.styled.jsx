@@ -9,6 +9,7 @@ export const Card = styled.li`
 export const ImageContainer = styled.div`
   width: 274px;
   height: 268px;
+  position: relative;
 `;
 
 export const CarImage = styled.img`
@@ -91,4 +92,24 @@ export const LearMoreBtn = styled.button`
   &:focus {
     background-color: #224bac;
   }
+`;
+
+export const HeartBtn = styled.button`
+  outline: none;
+  border: none;
+  background-color: inherit;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  svg {
+    fill: transparent;
+    stroke: white;
+    transition: all 400ms ease;
+    &:hover, 
+    &:focus {
+      transform: scale(1.1);
+      stroke: #a72f2f;
+    }
+  }
+
 `;

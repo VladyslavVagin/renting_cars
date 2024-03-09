@@ -13,8 +13,6 @@ const CarsListCards = ({filterCars}) => {
   useEffect(() => {
    if(filterCars !== "") {
     dispatch(fetchFilteredCars({filter: filterCars}));
-   } else {
-    console.log("No filter");
    }
   }, [dispatch, filterCars])
 

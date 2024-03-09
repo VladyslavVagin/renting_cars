@@ -1,8 +1,11 @@
-import React from 'react'
+import FavoriteList from "components/FavoritesPage/FavoriteList/FavoriteList"
 
 const Favorites = () => {
+
   return (
-    <div>Favorites</div>
+    <div>
+      <FavoriteList/>
+    </div>
   )
 }
 

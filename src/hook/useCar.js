@@ -5,7 +5,7 @@ import {
   selectFilteredCars,
   selectError,
   selectIsLoading,
-} from "redux/selectors";
+} from "../redux/selectors";
 
 export const useCar = () => {
   const isLoading = useSelector(selectIsLoading);

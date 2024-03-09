@@ -1,0 +1,94 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import {
+    CarImage,
+    CarInfoList,
+    Card,
+    CardTitle,
+    CardTitleContainer,
+    HeartBtn,
+    ImageContainer,
+    LearMoreBtn,
+  } from "./FavoriteCard.styled";
+  import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
+  import sprite from "icons/icons.svg";
+
+const FavoriteCard = ({ item }) => {
+    const [showModal, setShowModal] = useState(false);
+  const {
+    img,
+    description,
+    make,
+    model,
+    rentalPrice,
+    address,
+    rentalCompany,
+    type,
+    year,
+    mileage,
+    functionalities,
+    id,
+  } = item;
+
+  let parts = [];
+  let country = "";
+  let city = "";
+  let mileageChanged = mileage.toLocaleString("en-US");
+
+  if (address) {
+    parts = address?.split(",");
+    country = parts[parts.length - 1].trim() || "";
+    city = parts[parts.length - 2].trim() || "";
+  }
+  let premiumCar = description?.toLowerCase().includes("premium")
+    ? "Premium"
+    : "";
+
+  return ( <>
+    <Card>
+      <ImageContainer>
+        <CarImage src={img} alt={description} width={274} height={268} />
+        <HeartBtn type="button" id={id}>
+          <svg width={24} height={24}>
+            <use xlinkHref={`${sprite}#icon-heart`}></use>
+          </svg>
+        </HeartBtn>
+      </ImageContainer>
+      <CardTitleContainer>
+        <CardTitle>
+          {make}&nbsp;
+          <span>{model}</span>,&nbsp;
+          {year}
+        </CardTitle>
+        <p>{rentalPrice}</p>
+      </CardTitleContainer>
+      <div>
+        <CarInfoList>
+          <li>{city}</li>
+          <li>{country}</li>
+          <li>{rentalCompany}</li>
+          <li>{premiumCar}</li>
+          <li>{type}</li>
+          <li>{model}</li>
+          <li>{mileageChanged}</li>
+          <li>{functionalities ? functionalities[0] : ""}</li>
+        </CarInfoList>
+      </div>
+      <LearMoreBtn type="button" onClick={() => setShowModal(true)}>
+        Learn more
+      </LearMoreBtn>
+    </Card>
+    {showModal &&
+      createPortal(
+        <ModalCarDetails
+          car={item}
+          onClose={() => setShowModal(false)}
+          setShowModal={setShowModal}
+          showModal={showModal}
+        />,
+        document.body
+      )}
+  </>);
+};
+
+export default FavoriteCard;

@@ -10,6 +10,7 @@ import {
 } from "./CarsCard.styled";
 import { createPortal } from "react-dom";
 import { addCardToFavorite } from "../../../redux/operations";
+import { useCar } from "hook/useCar";
 import { useState } from "react";
 import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
 import sprite from "icons/icons.svg";
@@ -32,6 +33,7 @@ const CarsCard = ({ car }) => {
     functionalities,
     id
   } = car;
+  const {favorites} = useCar();
 
   let parts = [];
   let country = "";
@@ -47,11 +49,18 @@ const CarsCard = ({ car }) => {
     ? "Premium"
     : "";
 
-  const addFavorite = (event) => {
-    const cardId = event.currentTarget.id;
-    dispatch(addCardToFavorite({id: cardId}));
+    const addFavorite = (event) => {
+      const cardId = event.currentTarget.id;
+      
+      if (favorites.find(car => car.id === cardId)) {
+          console.log("This card is already in favorites!");
+          return; // Exit the function early if the card is already in favorites
+      }
+  
+      dispatch(addCardToFavorite({ id: cardId }));
+      console.log(favorites);
   }
-
+  
   return (
     <>
       <Card>

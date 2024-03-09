@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { register } from "../../redux/auth/operations";
-import { useDispatch } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors";
+import { useDispatch, useSelector } from "react-redux";
 import { BackgroundForm, Checkbox, FormSignup, InputStyled, LabelCheckbox, LabelForm, SubmitBtn } from "./Signup.styled";
 
 const initialValues = {
@@ -19,7 +20,9 @@ const schema = yup.object().shape({
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
   const [showPassword, setShowPassword] = useState(false);
+  console.log(user);
 
   const handleSubmitRegistration = (dataForm, { resetForm }) => {
     dispatch(register(dataForm));

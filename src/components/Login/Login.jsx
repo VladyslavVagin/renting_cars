@@ -1,7 +1,9 @@
-import { Formik, Form, Field } from "formik";
+import { Formik } from "formik";
 import { useState } from "react";
+import { logIn } from "../../redux/auth/operations";
 import * as yup from "yup";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { BackgroundForm, FormSignup, InputStyled, LabelForm, LabelCheckbox, Checkbox, SubmitBtn } from "components/Signup/Signup.styled";
 
 const initialValues = {
   email: "",
@@ -15,42 +17,42 @@ const schema = yup.object().shape({
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  //   const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  //   const handleSubmitLogin = (dataForm, { resetForm }) => {
-  //     dispatch(logIn(dataForm));
-  //     resetForm();
-  //   };
+    const handleSubmitLogin = (dataForm, { resetForm }) => {
+      dispatch(logIn(dataForm));
+      resetForm();
+    };
 
   return (
-    <div>
+    <BackgroundForm>
       <Formik
         initialValues={initialValues}
-        // onSubmit={handleSubmitLogin}
+        onSubmit={handleSubmitLogin}
         validationSchema={schema}
       >
-        <Form>
+        <FormSignup>
           <h2>Login form</h2>
-          <label htmlFor="email">
-            <span>&#42;</span>Email:
-            <Field
+          <LabelForm htmlFor="email">
+          Email:
+            <InputStyled
               type="email"
               name="email"
               required
               aria-label="Input for type your name"
             />
-          </label>
-          <label htmlFor="password">
-            <span>&#42;</span>Password:
-            <Field
+          </LabelForm>
+          <LabelForm htmlFor="password">
+           Password:
+            <InputStyled
               type={showPassword ? "text" : "password"}
               name="password"
               required
               aria-label="Input for type your password"
             />
-          </label>
-          <label htmlFor="toggle">
-            <Field
+          </LabelForm>
+          <LabelCheckbox htmlFor="toggle">
+            <Checkbox
               type="checkbox"
               name="toggle"
               onChange={() => setShowPassword(!showPassword)}
@@ -58,17 +60,17 @@ const Login = () => {
               aria-label="Checkbox for show or hide your password. If checked - password will be shown."
             />{" "}
             {showPassword ? "Hide password" : "Show password"}
-          </label>
-          <button
+          </LabelCheckbox>
+          <SubmitBtn
             type="submit"
             aria-label="Button for submit login form"
             title="Confirm login"
           >
          Login
-          </button>
-        </Form>
+          </SubmitBtn>
+        </FormSignup>
       </Formik>
-    </div>
+    </BackgroundForm>
   );
 };
 

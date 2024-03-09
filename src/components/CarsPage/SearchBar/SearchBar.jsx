@@ -1,6 +1,4 @@
 import { marks } from "lib/marks";
-import { useDispatch } from "react-redux";
-import { setQuery } from "../../../redux/filterSlice";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import {
@@ -9,28 +7,17 @@ import {
   SearchContainer,
   SelectContainer,
 } from "./SearchBar.styled";
-import { useEffect, useState } from "react";
 
-const SearchBar = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const dispatch = useDispatch();
+const SearchBar = ({setFilter}) => {
 
   const handleChange = (e) => {
     if(e === null) {
-      setSearchValue('');
+      setFilter('');
      return;
     } else {
-      setSearchValue(e.value);
+      setFilter(e.value);
     }
   };
-
-  useEffect(() => {
-    if(searchValue !== '') {
-      dispatch(setQuery(searchValue));
-    } else {
-      dispatch(setQuery(''));
-    }
-  }, [dispatch, searchValue])
 
   return (
     <SearchContainer>

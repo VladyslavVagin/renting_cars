@@ -30,6 +30,7 @@ const CarsCard = ({ car }) => {
   let parts = [];
   let country = "";
   let city = "";
+  let mileageChanged = mileage.toLocaleString('en-US');
 
   if (address) {
     parts = address?.split(",");
@@ -62,7 +63,7 @@ const CarsCard = ({ car }) => {
             <li>{premiumCar}</li>
             <li>{type}</li>
             <li>{model}</li>
-            <li>{mileage}</li>
+            <li>{mileageChanged}</li>
             <li>{functionalities ? functionalities[0] : ""}</li>
           </CarInfoList>
         </div>

@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <MenuNav>
           <StyledLink to={"/home"}>Main</StyledLink>
-          <StyledLink to={"/cars"}>Cars</StyledLink>
+          <StyledLink to={"/catalog"}>Cars</StyledLink>
           <StyledLink to={"/favorites"}>Favorites</StyledLink>
         </MenuNav>
       </ContainerHeader>

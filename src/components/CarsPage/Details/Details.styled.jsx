@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ImageCar = styled.img`
   object-fit: cover;
@@ -87,7 +88,7 @@ export const ListConditions = styled.ul`
   }
 `;
 
-export const RentalCarBtn = styled.button`
+export const RentalCarBtn = styled(Link)`
   outline: none;
   border: none;
   background: #3470ff;

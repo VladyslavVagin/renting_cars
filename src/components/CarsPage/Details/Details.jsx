@@ -33,6 +33,7 @@ const Details = ({ car }) => {
   let accAndFunct = accessories.concat(functionalities);
   let conditionsForRent = rentalConditions.split("\n");
   let minAge = parseInt(conditionsForRent[0].split(": ")[1]);
+  let mileageChanged = mileage.toLocaleString('en-US');
 
   if (address) {
     parts = address?.split(",");
@@ -74,14 +75,14 @@ const Details = ({ car }) => {
             <li>{conditionsForRent[1]}</li>
             <li>{conditionsForRent[2]}</li>
             <li>
-              Mileage: <span>{mileage}</span>
+              Mileage: <span>{mileageChanged}</span>
             </li>
             <li>
               Price: <span>{rentalPrice}</span>
             </li>
           </ListConditions>
         </SubTitle>
-        <RentalCarBtn type="button">Rental car</RentalCarBtn>
+        <RentalCarBtn xlinkHref={`tel:+380730000000`}>Rental car</RentalCarBtn>
       </div>
     );
   }

@@ -76,6 +76,7 @@ const CarsCard = ({ car }) => {
             car={car}
             onClose={() => setShowModal(false)}
             setShowModal={setShowModal}
+            showModal={showModal}
           />,
           document.body
         )}

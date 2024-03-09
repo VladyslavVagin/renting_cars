@@ -3,7 +3,18 @@ import Details from 'components/CarsPage/Details/Details';
 import { Backdrop, CloseBtn, Modal } from './ModalCarDetails.styled'
 import sprite from "icons/icons.svg"
 
-const ModalCarDetails = ({setShowModal, car}) => {
+const ModalCarDetails = ({setShowModal, car, showModal}) => {
+
+useEffect(() => {
+  if(showModal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+  return () => {
+    document.body.style.overflow = "auto";
+  }
+}, [showModal])
 
  useEffect(() => {
 

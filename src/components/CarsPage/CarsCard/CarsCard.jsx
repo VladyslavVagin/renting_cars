@@ -1,6 +1,18 @@
-import { CarImage, CarInfoList, Card, CardTitle, CardTitleContainer, ImageContainer, LearMoreBtn } from "./CarsCard.styled";
+import {
+  CarImage,
+  CarInfoList,
+  Card,
+  CardTitle,
+  CardTitleContainer,
+  ImageContainer,
+  LearMoreBtn,
+} from "./CarsCard.styled";
+import { createPortal } from "react-dom";
+import { useState } from "react";
+import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
 
 const CarsCard = ({ car }) => {
+  const [showModal, setShowModal] = useState(false);
   const {
     img,
     description,
@@ -12,17 +24,17 @@ const CarsCard = ({ car }) => {
     type,
     year,
     mileage,
-    functionalities
+    functionalities,
   } = car;
 
   let parts = [];
-  let country = '';
-  let city = '';
+  let country = "";
+  let city = "";
 
-  if(address) {
+  if (address) {
     parts = address?.split(",");
-    country = parts[parts.length - 1].trim() || '';
-    city = parts[parts.length - 2].trim() || '';
+    country = parts[parts.length - 1].trim() || "";
+    city = parts[parts.length - 2].trim() || "";
   }
   let premiumCar = description?.toLowerCase().includes("premium")
     ? "Premium"
@@ -32,7 +44,7 @@ const CarsCard = ({ car }) => {
     <>
       <Card>
         <ImageContainer>
-          <CarImage src={img} alt={description} width={274} height={268}/>
+          <CarImage src={img} alt={description} width={274} height={268} />
         </ImageContainer>
         <CardTitleContainer>
           <CardTitle>
@@ -54,8 +66,19 @@ const CarsCard = ({ car }) => {
             <li>{functionalities ? functionalities[0] : ""}</li>
           </CarInfoList>
         </div>
-        <LearMoreBtn type="button">Learn more</LearMoreBtn>
+        <LearMoreBtn type="button" onClick={() => setShowModal(true)}>
+          Learn more
+        </LearMoreBtn>
       </Card>
+      {showModal &&
+        createPortal(
+          <ModalCarDetails
+            car={car}
+            onClose={() => setShowModal(false)}
+            setShowModal={setShowModal}
+          />,
+          document.body
+        )}
     </>
   );
 };

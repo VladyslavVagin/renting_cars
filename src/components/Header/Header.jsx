@@ -25,9 +25,9 @@ const Header = () => {
           </Link>
         </div>
         <MenuNav>
-          <StyledLink to={"/home"}>Головна</StyledLink>
-          <StyledLink to={"/cars"}>Оголошення</StyledLink>
-          <StyledLink to={"/favorites"}>Моя колекція</StyledLink>
+          <StyledLink to={"/home"}>Main</StyledLink>
+          <StyledLink to={"/cars"}>Cars</StyledLink>
+          <StyledLink to={"/favorites"}>Favorites</StyledLink>
         </MenuNav>
       </ContainerHeader>
     </HeaderMain>

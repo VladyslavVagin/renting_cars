@@ -49,12 +49,11 @@ const CarsCard = ({ car }) => {
     ? "Premium"
     : "";
 
-    const addFavorite = (event) => {
-      const cardId = event.currentTarget.id;
-      if (favorites.find(car => car.id === cardId)) {
+    const addFavorite = () => {
+      if (favorites.find(car => car.id === id)) {
           return; 
       }
-      dispatch(addCardToFavorite({ id: cardId }));
+      dispatch(addCardToFavorite({ id }));
   }
   
   return (

@@ -111,5 +111,4 @@ export const HeartBtn = styled.button`
       stroke: #a72f2f;
     }
   }
-
 `;

@@ -9,12 +9,15 @@ import {
   LearMoreBtn,
 } from "./CarsCard.styled";
 import { createPortal } from "react-dom";
+import { addCardToFavorite } from "../../../redux/operations";
 import { useState } from "react";
 import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
 import sprite from "icons/icons.svg";
+import { useDispatch } from "react-redux";
 
 const CarsCard = ({ car }) => {
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
   const {
     img,
     description,
@@ -27,6 +30,7 @@ const CarsCard = ({ car }) => {
     year,
     mileage,
     functionalities,
+    id
   } = car;
 
   let parts = [];
@@ -43,12 +47,17 @@ const CarsCard = ({ car }) => {
     ? "Premium"
     : "";
 
+  const addFavorite = (event) => {
+    const cardId = event.currentTarget.id;
+    dispatch(addCardToFavorite({id: cardId}));
+  }
+
   return (
     <>
       <Card>
         <ImageContainer>
           <CarImage src={img} alt={description} width={274} height={268} />
-          <HeartBtn type="button">
+          <HeartBtn type="button" onClick={addFavorite} id={id}>
             <svg width={24} height={24}>
               <use xlinkHref={`${sprite}#icon-heart`}></use>
             </svg>

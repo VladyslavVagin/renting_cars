@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchFilteredCars, fetchCars } from "./operations";
+import { fetchFilteredCars, fetchCars, addCardToFavorite } from "./operations";
 
 const initialState = {
   cars: [],
@@ -39,6 +39,13 @@ export const carsSlice = createSlice({
       })
       .addCase(fetchFilteredCars.pending, handlePending)
       .addCase(fetchFilteredCars.rejected, handleRejected)
+      .addCase(addCardToFavorite.fulfilled, (state, {payload}) => {
+        state.isLoading = false;
+        state.error = null;
+        state.favorites = [...state.favorites, ...payload];
+      })
+      .addCase(addCardToFavorite.pending, handlePending)
+      .addCase(addCardToFavorite.rejected, handleRejected)
   }
 })
 export const carsReducer = carsSlice.reducer;

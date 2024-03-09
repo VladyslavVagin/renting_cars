@@ -24,3 +24,15 @@ async ({page, limit}, thunkAPI) => {
         }
       }
     )
+
+     // ============================== ADD CAR CARD TO FAVORITE
+     export const addCardToFavorite = createAsyncThunk('cars/addFavorite',
+      async ({id}, thunkAPI) => {
+        try {
+            const response = await axios.get(`/advert?id=${id}`);
+            return response.data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+      }
+     )

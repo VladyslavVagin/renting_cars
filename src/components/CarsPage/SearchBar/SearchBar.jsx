@@ -1,4 +1,6 @@
 import { marks } from "lib/marks";
+import { useDispatch } from "react-redux";
+import { setQuery } from "../../../redux/filterSlice";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import {
@@ -7,13 +9,35 @@ import {
   SearchContainer,
   SelectContainer,
 } from "./SearchBar.styled";
+import { useEffect, useState } from "react";
 
 const SearchBar = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    if(e === null) {
+      setSearchValue('');
+     return;
+    } else {
+      setSearchValue(e.value);
+    }
+  };
+
+  useEffect(() => {
+    if(searchValue !== '') {
+      dispatch(setQuery(searchValue));
+    } else {
+      dispatch(setQuery(''));
+    }
+  }, [dispatch, searchValue])
+
   return (
     <SearchContainer>
       <SelectContainer>
         <LabelSelect htmlFor="marks">Car brand</LabelSelect>
         <Select
+          onChange={handleChange}
           options={marks}
           makeAnimated={makeAnimated}
           placeholder={"Enter the text"}
@@ -48,7 +72,7 @@ const SearchBar = () => {
               ...baseStyles,
               borderRadius: "14px",
               boxShadow: "0 4px 36px 0 rgba(0, 0, 0, 0.02)",
-            })
+            }),
           }}
         />
       </SelectContainer>

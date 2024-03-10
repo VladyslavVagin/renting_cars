@@ -5,23 +5,14 @@ import {
   SearchContainer,
   SelectContainer,
 } from "./SelectPrice.styled";
-import { useCar } from "hook/useCar";
 
 const SelectPrice = ({ setPrice }) => {
-  const { cars, filteredCars } = useCar();
 
   const handleChangePrice = (event) => {
     if (event === null) {
       setPrice("");
     } else {
       setPrice(event.value);
-      // if(filteredCars.length > 0) {
-      //     const filteredByPriceModel = filteredCars.filter(car => car.rentalPrice === event.value);
-      //     console.log(filteredByPriceModel);
-      // } else {
-      //     const filteredAllByPrice = cars.filter(car => car.rentalPrice === event.value);
-      //     console.log(filteredAllByPrice);
-      // }
     }
   };
 

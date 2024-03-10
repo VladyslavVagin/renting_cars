@@ -8,9 +8,13 @@ import {
   LogoText,
   Logo,
   StyledLink,
+  BurgerBtn,
 } from "./Header.styled";
+import { useState } from "react";
 
 const Header = () => {
+ const [showMenu, setIsShowMenu] = useState(false);
+
   return (
     <HeaderMain>
       <ContainerHeader>
@@ -29,6 +33,11 @@ const Header = () => {
           <StyledLink to={"/catalog"}>Cars</StyledLink>
           <StyledLink to={"/favorites"}>Favorites</StyledLink>
         </MenuNav>
+        <BurgerBtn>
+          <svg width={34} height={34}>
+            <use xlinkHref={`${sprite}#icon-menu`}></use>
+          </svg>
+        </BurgerBtn>
       </ContainerHeader>
     </HeaderMain>
   );

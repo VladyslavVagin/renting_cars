@@ -1,28 +1,30 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { lazy } from "react";
 import SharedLayout from "./SharedLayout/SharedLayout";
-import Homepage from "pages/Homepage";
-import Cars from "pages/Cars";
-import Favorites from "pages/Favorites";
+
+const Homepage = lazy(() => import("pages/Homepage"));
+const Cars = lazy(() => import("pages/Cars"));
+const Favorites = lazy(() => import("pages/Favorites"));
 
 const App = () => {
-const location = useLocation();
+  const location = useLocation();
 
-if(location.pathname === "/") {
-  location.pathname = "/home";
-}
+  if (location.pathname === "/") {
+    location.pathname = "/home";
+  }
 
   return (
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index path="/home" element={<Homepage/>}/>
-          <Route path="/catalog" element={<Cars />}/>
-          <Route path="/favorites" element={<Favorites />}/>
+          <Route index path="/home" element={<Homepage />} />
+          <Route path="/catalog" element={<Cars />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
-}
+};
 
 export default App;

@@ -22,9 +22,12 @@ export const IconSvg = styled.svg`
 `;
 
 export const MenuNav = styled.nav`
-  display: flex;
-  align-items: center;
-  column-gap: 28px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    column-gap: 28px;
+  }
 `;
 
 export const LogoText = styled.p`
@@ -49,3 +52,20 @@ export const StyledLink = styled(NavLink)`
     border: 1px solid white;
   }
 `;
+
+export const BurgerBtn = styled.button`
+  outline: none;
+  border: none;
+  background-color: inherit;
+  svg {
+    fill: white;
+    transition: all 400ms ease;
+  }
+  &:hover svg, 
+  &:focus svg {
+    transform: scale(1.1) rotate(360deg);
+  }
+  @media screen and (min-width: 768px){
+    display: none;
+  }
+`

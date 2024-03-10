@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
 import { fetchFilteredCars } from "../../../redux/operations";
 import CarsCard from "../CarsCard/CarsCard";
-import { ListCars } from "./CarsListCards.styled";
 import { useEffect } from "react";
 import { useCar } from "hook/useCar";
+import { ListCars } from "./CarsListCards.styled";
 
 const CarsListCards = ({ filterCars, price }) => {
   const dispatch = useDispatch();
-  const { cars, filteredCars } = useCar();
+  const { cars, filteredCars, allCars } = useCar();
   let filteredByPriceModel;
 
   if (price !== "") {
@@ -17,7 +17,7 @@ const CarsListCards = ({ filterCars, price }) => {
       );
       console.log(filteredByPriceModel);
     } else {
-      filteredByPriceModel = cars.filter((car) => car.rentalPrice === price);
+      filteredByPriceModel = allCars.filter((car) => car.rentalPrice === price);
       console.log(filteredByPriceModel);
     }
   }

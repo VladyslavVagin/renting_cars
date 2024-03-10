@@ -1,5 +1,7 @@
 export const selectCars = state => state.cars.cars;
 
+export const selectAll = state => state.cars.allCars;
+
 export const selectFilteredCars = state => state.cars.filteredCars;
 
 export const selectIsLoading = state => state.cars.isLoading;

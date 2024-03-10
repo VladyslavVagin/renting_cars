@@ -30,7 +30,7 @@ const SelectPrice = ({ setPrice }) => {
             control: (baseStyles) => ({
               ...baseStyles,
               border: "none",
-              width: "125px",
+              width: "185px",
               height: "48px",
               background: "#f7f7fb",
               borderRadius: "14px",

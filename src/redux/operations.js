@@ -3,6 +3,19 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://65e7912253d564627a8f0361.mockapi.io/cars";
 
+// ============================== GET ALL CARS FROM MOCKAPI
+export const fetchAllCars = createAsyncThunk(
+  "cars/fetchAll",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get('/advert');
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
 // ============================== GET CARS PER PAGE FROM MOCKAPI
 export const fetchCars = createAsyncThunk(
   "cars/fetchPerPage",

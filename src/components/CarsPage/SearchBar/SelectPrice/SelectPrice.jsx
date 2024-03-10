@@ -1,38 +1,45 @@
-import { marks } from "lib/marks";
 import Select from "react-select";
+import { prices } from "lib/prices";
 import {
   LabelSelect,
   SearchContainer,
   SelectContainer,
-} from "./SearchBar.styled";
-import SelectPrice from "./SelectPrice/SelectPrice";
+} from "./SelectPrice.styled";
+import { useCar } from "hook/useCar";
 
-const SearchBar = ({setFilter, setPrice}) => {
+const SelectPrice = ({ setPrice }) => {
+  const { cars, filteredCars } = useCar();
 
-  const handleChange = (e) => {
-    if(e === null) {
-      setFilter('');
-     return;
+  const handleChangePrice = (event) => {
+    if (event === null) {
+      setPrice("");
     } else {
-      setFilter(e.value);
+      setPrice(event.value);
+      // if(filteredCars.length > 0) {
+      //     const filteredByPriceModel = filteredCars.filter(car => car.rentalPrice === event.value);
+      //     console.log(filteredByPriceModel);
+      // } else {
+      //     const filteredAllByPrice = cars.filter(car => car.rentalPrice === event.value);
+      //     console.log(filteredAllByPrice);
+      // }
     }
   };
 
   return (
     <SearchContainer>
       <SelectContainer>
-        <LabelSelect htmlFor="marks">Car brand</LabelSelect>
+        <LabelSelect htmlFor="prices">Price/ 1 hour</LabelSelect>
         <Select
-          onChange={handleChange}
-          options={marks}
-          placeholder={"Enter the text"}
+          onChange={handleChangePrice}
+          options={prices}
+          placeholder={"To $"}
           maxMenuHeight={272}
           isClearable={true}
           styles={{
             control: (baseStyles) => ({
               ...baseStyles,
               border: "none",
-              width: "224px",
+              width: "125px",
               height: "48px",
               background: "#f7f7fb",
               borderRadius: "14px",
@@ -61,9 +68,8 @@ const SearchBar = ({setFilter, setPrice}) => {
           }}
         />
       </SelectContainer>
-      <SelectPrice setPrice={setPrice}/>
     </SearchContainer>
   );
 };
 
-export default SearchBar;
+export default SelectPrice;

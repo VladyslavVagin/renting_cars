@@ -21,8 +21,12 @@ export const fetchFilteredCars = createAsyncThunk(
   "cars/fetchFiltered",
   async ({ filter }, thunkAPI) => {
     try {
-      const response = await axios.get(`/advert?filter=${filter}`);
-      return response.data;
+      if (filter.length !== 0) {
+        const response = await axios.get(`/advert?filter=${filter}`);
+        return response.data;
+      } else {
+        return [];
+      }
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

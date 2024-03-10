@@ -9,6 +9,7 @@ import Loader from "components/Loader/Loader";
 
 const Cars = () => {
   const [filterCars, setFilter] = useState('');
+  const [price, setPrice] = useState('');
   const [page, setPage] = useState(0);
   const [limit] = useState(12);
   const prevPage = useRef(0);
@@ -30,8 +31,8 @@ if(cars.length < 1 && page === 0) {
 
   return (
     <section>
-      <SearchBar setFilter={setFilter}/>
-      <CarsListCards filterCars={filterCars}/>
+      <SearchBar setFilter={setFilter} setPrice={setPrice}/>
+      <CarsListCards filterCars={filterCars} price={price}/>
       {cars.length > 24 ? (
         <TextEnd>The END of collection!</TextEnd>
       ) : (

@@ -14,7 +14,7 @@ export const marks = [
   { value: "pontiac", label: "Pontiac" },
   { value: "land rover", label: "Land Rover" },
   { value: "lamborghini", label: "Lamborghini" },
-  { value: "audi", label: "Audi" },
+  { value: "mazda", label: "Mazda" },
   { value: "bmw", label: "BMW" },
   { value: "mercedes-benz", label: "Mercedes-Benz" },
   { value: "chrysler", label: "Chrysler" },

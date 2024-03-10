@@ -5,6 +5,7 @@ import CarsListCards from "components/CarsPage/CarsListCards/CarsListCards";
 import SearchBar from "components/CarsPage/SearchBar/SearchBar";
 import { LoadMoreBtn, TextEnd } from "./Cars.styled";
 import { useCar } from "hook/useCar";
+import Loader from "components/Loader/Loader";
 
 const Cars = () => {
   const [filterCars, setFilter] = useState('');
@@ -12,7 +13,7 @@ const Cars = () => {
   const [limit] = useState(12);
   const prevPage = useRef(0);
   const dispatch = useDispatch();
-  const {cars} = useCar();
+  const {cars, isLoading} = useCar();
 
   useEffect(() => {
     if (page > 0 && page !== prevPage.current) {
@@ -31,11 +32,11 @@ if(cars.length < 1 && page === 0) {
     <section>
       <SearchBar setFilter={setFilter}/>
       <CarsListCards filterCars={filterCars}/>
-      {cars.length === 32 ? (
+      {cars.length > 24 ? (
         <TextEnd>The END of collection!</TextEnd>
       ) : (
         <LoadMoreBtn type="button" onClick={() => setPage((prev) => prev + 1)}>
-          Load more
+         {isLoading ? <Loader/> : 'Load more'}
         </LoadMoreBtn>
       )}
     </section>

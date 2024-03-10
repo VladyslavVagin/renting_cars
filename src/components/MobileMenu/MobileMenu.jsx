@@ -1,14 +1,14 @@
-import { StyledLink, MenuNav } from "./MobileMenu.styled"
+import { StyledLink, MenuNav, MobileMenuContainer } from "./MobileMenu.styled"
 
 const MobileMenu = () => {
   return (
-    <div>
+    <MobileMenuContainer>
          <MenuNav>
           <StyledLink to={"/home"}>Main</StyledLink>
           <StyledLink to={"/catalog"}>Cars</StyledLink>
           <StyledLink to={"/favorites"}>Favorites</StyledLink>
         </MenuNav>
-    </div>
+    </MobileMenuContainer>
   )
 }
 

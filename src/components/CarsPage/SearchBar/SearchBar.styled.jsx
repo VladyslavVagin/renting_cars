@@ -4,8 +4,15 @@ export const SearchContainer = styled.div`
   margin: 24px 0;
   padding: 0 40px;
   display: flex;
-  align-items: flex-end;
-  column-gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+
+  @media screen and (min-width: 480px){
+    flex-direction: row;
+    align-items: flex-end;
+    column-gap: 24px;
+  }
 `;
 
 export const SelectContainer = styled.div`

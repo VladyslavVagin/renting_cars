@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import sprite from "../../icons/icons.svg";
 import {
   HeaderMain,
@@ -10,12 +10,18 @@ import {
   StyledLink,
   BurgerBtn,
 } from "./Header.styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import MobileMenu from "components/MobileMenu/MobileMenu";
 
 const Header = () => {
  const [showMenu, setIsShowMenu] = useState(false);
+ const location = useLocation();
 
-  return (
+ useEffect(() => {
+  setIsShowMenu(false);
+ }, [location.pathname])
+
+  return (<>
     <HeaderMain>
       <ContainerHeader>
         <div>
@@ -33,13 +39,17 @@ const Header = () => {
           <StyledLink to={"/catalog"}>Cars</StyledLink>
           <StyledLink to={"/favorites"}>Favorites</StyledLink>
         </MenuNav>
-        <BurgerBtn>
-          <svg width={34} height={34}>
+        <BurgerBtn onClick={() => setIsShowMenu(prev => !prev)}>
+         {showMenu ? <svg width={34} height={34}>
+            <use xlinkHref={`${sprite}#icon-close`}></use>
+          </svg> : <svg width={34} height={34}>
             <use xlinkHref={`${sprite}#icon-menu`}></use>
-          </svg>
+          </svg>} 
         </BurgerBtn>
+        {showMenu && <MobileMenu/>} 
       </ContainerHeader>
     </HeaderMain>
+</>
   );
 };
 

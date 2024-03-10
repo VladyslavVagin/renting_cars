@@ -19,9 +19,13 @@ export const LoadMoreBtn = styled.button`
 `;
 
 export const TextEnd = styled.p`
+  font-size: 18px;
+  font-weight: 700;
+  color: #3470ff;
+  text-align: center;
+  margin: 40px 0;
+
+  @media screen and (min-width: 420px) {
     font-size: 28px;
-    font-weight: 700;
-    color: #3470ff;
-    text-align: center;
-    margin: 40px 0;
-`
+  }
+`;

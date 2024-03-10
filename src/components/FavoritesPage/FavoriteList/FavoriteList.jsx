@@ -15,7 +15,7 @@ const FavoriteList = () => {
       </ListCars>
       {favorites.length === 0 && (
         <ImageContainerMechanic>
-          <img src={mechanicImage} alt="mechanic" width={300} height={500} />
+          <img src={mechanicImage} alt="mechanic" width={200} height={400} />
           <p>You haven't added any cars to favorites yet!</p>
         </ImageContainerMechanic>
       )}

@@ -6,7 +6,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-color: rgba(18, 20, 23, 0.5);
+  background-color: var(--backdrop-color);
 `;
 
 export const Modal = styled.div`
@@ -19,7 +19,7 @@ export const Modal = styled.div`
   max-height: 80%;
   min-height: 452px;
   padding: 40px;
-  background-color: white;
+  background-color: var(--white-color);
   overflow-y: scroll;
 `;
 
@@ -33,13 +33,13 @@ export const CloseBtn = styled.button`
     position: absolute;
     top: 12px;
     right: 12px;
-    transition: all 400ms ease;
+    transition: var(--animation-hover);
     &:hover,
     &:focus {
         transform: scale(1.2);
     }
 
     svg {
-        fill: #121417;
+        fill: var(--dark-color);
     }
 `

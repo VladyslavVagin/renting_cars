@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const HeaderMain = styled.header`
   padding: 20px 0;
-  background-color: #21d4fd;
-  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  background-color: var(--header-bgColor);
+  background-image: var(--header-bgImage);
   -webkit-box-shadow: 0px 3px 26px 1px rgba(0, 0, 0, 0.92);
   -moz-box-shadow: 0px 3px 26px 1px rgba(0, 0, 0, 0.92);
   box-shadow: 0px 3px 26px 1px rgba(0, 0, 0, 0.92);
@@ -19,7 +19,7 @@ export const ContainerHeader = styled.div`
 `;
 
 export const IconSvg = styled.svg`
-  fill: white;
+  fill: var(--white-color);
 `;
 
 export const MenuNav = styled.nav`
@@ -32,7 +32,7 @@ export const MenuNav = styled.nav`
 `;
 
 export const LogoText = styled.p`
-  color: white;
+  color: var(--white-color);
   font-family: "Inter";
   font-size: 28px;
   font-weight: 700;
@@ -44,13 +44,13 @@ export const Logo = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: white;
+  color: var(--white-color);
   font-size: 18px;
   font-weight: 600;
   border-radius: 8px;
   padding: 6px 18px;
   &.active {
-    border: 1px solid white;
+    border: 1px solid var(--white-color);
   }
 `;
 
@@ -59,8 +59,8 @@ export const BurgerBtn = styled.button`
   border: none;
   background-color: inherit;
   svg {
-    fill: white;
-    transition: all 400ms ease;
+    fill: var(--white-color);
+    transition: var(--animation-hover);
   }
   &:hover svg, 
   &:focus svg {

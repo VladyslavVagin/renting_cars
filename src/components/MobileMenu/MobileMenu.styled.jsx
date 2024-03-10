@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const MobileMenuContainer = styled.div`
-  background-color: #21d4fd;
-  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  background-color: var(--header-bgColor);
+  background-image: var(--header-bgImage);
   position: absolute;
   top: 50px;
   left: 0;
@@ -28,12 +28,12 @@ export const MenuNav = styled.nav`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: white;
+  color: var(--white-color);
   font-size: 24px;
   font-weight: 600;
   border-radius: 8px;
   padding: 6px 18px;
   &.active {
-    border: 1px solid white;
+    border: 1px solid var(--white-color);
   }
 `;

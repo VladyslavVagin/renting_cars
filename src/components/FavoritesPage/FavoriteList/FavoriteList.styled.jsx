@@ -17,7 +17,7 @@ export const ImageContainerMechanic = styled.div`
   p {
     font-size: 24px;
     font-weight: 600;
-    color: #0d5cb6;
+    color: var(--accent-color);
   }
 
   @media screen and (min-width: 600px) {

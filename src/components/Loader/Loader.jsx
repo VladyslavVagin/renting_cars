@@ -4,9 +4,9 @@ const Loader = () => {
   return (
     <ThreeCircles
       visible={true}
-      height="34"
-      width="34"
-      color="#0973ca"
+      height="64"
+      width="64"
+      color="#1000eb"
       ariaLabel="three-circles-loading"
       wrapperStyle={{}}
       wrapperClass=""

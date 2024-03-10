@@ -22,14 +22,14 @@ export const CardTitle = styled.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #121417;
+  color: var(--dark-color);
   max-width: 230px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   span {
-    color: #3470ff;
+    color: var(--accent-color);
   }
 `;
 
@@ -45,7 +45,7 @@ export const CarInfoList = styled.ul`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--backdrop-color);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -83,14 +83,15 @@ export const LearMoreBtn = styled.button`
   outline: none;
   border: none;
   border-radius: 12px;
-  background: #3470ff;
+  background: var(--accent-color);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.42857;
-  color: #fff;
+  color: var(--white-color);
+  transition: var(--animation-hover);
   &:hover,
   &:focus {
-    background-color: #224bac;
+    background-color: var(--btn-hover);
   }
 `;
 
@@ -103,12 +104,12 @@ export const HeartBtn = styled.button`
   right: 8px;
   svg {
     fill: transparent;
-    stroke: white;
-    transition: all 400ms ease;
+    stroke: var(--white-color);
+    transition: var(--animation-hover);
     &:hover, 
     &:focus {
       transform: scale(1.1);
-      stroke: #a72f2f;
+      stroke: var(--heart-red);
     }
   }
 `;

@@ -9,7 +9,7 @@ export const SectionHero = styled.section`
   background-size: cover;
   background-attachment: fixed;
   background-position: 40%;
-  color: white;
+  color: var(--white-color);
   height: calc(100dvh - 38px);
 `;
 
@@ -24,7 +24,7 @@ export const HeroContainer = styled.div`
 
 export const Title = styled.h1`
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #d1cac2;
+  color: var(--white-color);
   font-size: 32px;
   line-height: 1.2;
   text-align: center;
@@ -42,7 +42,7 @@ export const Title = styled.h1`
 
 export const TitleText = styled.p`
   font-size: 18px;
-  color: #d1cac2;
+  color: var(--white-color);
   font-weight: 600;
   padding: 4px;
   text-align: center;
@@ -55,16 +55,16 @@ export const TitleText = styled.p`
 `;
 
 export const LinkToCars = styled(Link)`
-  color: antiquewhite;
+  color: var(--white-color);
   text-transform: uppercase;
   font-size: 22px;
   border: 2px solid whitesmoke;
   padding: 8px;
-  transition: all 400ms ease;
+  transition: var(--animation-hover);
   &:hover, 
   &:focus {
-     border-color: #3232c7;
-     background-color: #3232c7;
+     border-color: var(--btn-hover);
+     background-color: var(--btn-hover);
   }
 
     @media screen and (min-width: 440px) {

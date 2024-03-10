@@ -15,10 +15,8 @@ const CarsListCards = ({ filterCars, price }) => {
       filteredByPriceModel = filteredCars.filter(
         (car) => car.rentalPrice === price
       );
-      console.log(filteredByPriceModel);
     } else {
       filteredByPriceModel = allCars.filter((car) => car.rentalPrice === price);
-      console.log(filteredByPriceModel);
     }
   }
 

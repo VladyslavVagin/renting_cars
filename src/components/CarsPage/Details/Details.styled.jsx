@@ -10,12 +10,12 @@ export const CardTitle = styled.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #121417;
+  color: var(--dark-color);
   margin-top: 14px;
   margin-bottom: 8px;
 
   span {
-    color: #3470ff;
+    color: var(--accent-color);
   }
 `;
 
@@ -23,7 +23,7 @@ export const InfoList = styled.ul`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--backdrop-color);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -51,7 +51,7 @@ export const Description = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.42857;
-  color: #121417;
+  color: var(--dark-color);
   margin-bottom: 24px;
 `;
 
@@ -62,7 +62,7 @@ export const SubTitle = styled.div`
     font-weight: 500;
     font-size: 14px;
     line-height: 1.42857;
-    color: #121417;
+    color: var(--dark-color);
   }
 `;
 
@@ -83,7 +83,7 @@ export const ListConditions = styled.ul`
 
     span {
       font-weight: 600;
-      color: #3470ff;
+      color: var(--accent-color);
     }
   }
 `;
@@ -91,7 +91,7 @@ export const ListConditions = styled.ul`
 export const RentalCarBtn = styled(Link)`
   outline: none;
   border: none;
-  background: #3470ff;
+  background:  var(--accent-color);
   border-radius: 12px;
   padding: 12px 50px;
   width: 168px;
@@ -99,5 +99,5 @@ export const RentalCarBtn = styled(Link)`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.42857;
-  color: #fff;
+  color: var(--white-color);
 `;

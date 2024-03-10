@@ -52,6 +52,18 @@
   font-display: swap;
 }
 
+:root {
+  --animation-hover: all 400ms ease;
+  --header-bgColor: #21d4fd;
+  --header-bgImage: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  --white-color: white;
+  --backdrop-color: rgba(18, 20, 23, 0.5);
+  --dark-color: #121417;
+  --accent-color: #3470ff;
+  --btn-hover: #224bac;
+  --heart-red: #a72f2f;
+}
+
 * {
   box-sizing: border-box;
 }

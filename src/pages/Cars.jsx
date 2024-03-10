@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { fetchCars } from "../redux/operations";
 import CarsListCards from "components/CarsPage/CarsListCards/CarsListCards";
 import SearchBar from "components/CarsPage/SearchBar/SearchBar";
@@ -9,15 +9,21 @@ const Cars = () => {
   const [filterCars, setFilter] = useState('');
   const [page, setPage] = useState(0);
   const [limit] = useState(12);
+  const prevPage = useRef(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (page === 0) {
+    if (page > 0 && page !== prevPage.current) {
+        dispatch(fetchCars({ page, limit }));
+    } else {
       setPage(1);
-    } else if (page > 0) {
-      dispatch(fetchCars({ page, limit }));
-    } 
-  }, [dispatch, limit, page]);
+    }
+
+    prevPage.current = page;
+}, [dispatch, limit, page])
+
+
+
 
   return (
     <section>

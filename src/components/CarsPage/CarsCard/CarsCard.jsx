@@ -9,7 +9,7 @@ import {
   LearMoreBtn,
 } from "./CarsCard.styled";
 import { createPortal } from "react-dom";
-import { addCardToFavorite } from "../../../redux/operations";
+import { addCardToFavorite, removeCardFromFavorite } from "../../../redux/operations";
 import { useCar } from "hook/useCar";
 import { useState } from "react";
 import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
@@ -51,6 +51,8 @@ const CarsCard = ({ car }) => {
 
     const addFavorite = () => {
       if (favorites.find(car => car.id === id)) {
+        let newFavorites = favorites.filter(el => el.id !== id);
+        dispatch(removeCardFromFavorite(newFavorites));
           return; 
       }
       dispatch(addCardToFavorite({ id }));

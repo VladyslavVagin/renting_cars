@@ -12,10 +12,13 @@ import {
     LearMoreBtn,
   } from "./FavoriteCard.styled";
   import ModalCarDetails from "components/ModalCarDetails/ModalCarDetails";
+  import { removeCardFromFavorite } from "../../../redux/operations";
   import sprite from "icons/icons.svg";
+import { useDispatch } from "react-redux";
 
 const FavoriteCard = ({ item }) => {
     const [showModal, setShowModal] = useState(false);
+    const dispatch = useDispatch();
     const { favorites } = useCar();
   const {
     img,
@@ -46,11 +49,18 @@ const FavoriteCard = ({ item }) => {
     ? "Premium"
     : "";
 
+    const removeFavorite = () => {
+      if (favorites.find(car => car.id === id)) {
+        let newFavorites = favorites.filter(el => el.id !== id);
+        dispatch(removeCardFromFavorite(newFavorites)); 
+      }
+  }
+
   return ( <>
     <Card>
       <ImageContainer>
         <CarImage src={img} alt={description} width={274} height={268} />
-        <HeartBtn type="button" id={id}>
+        <HeartBtn type="button" id={id} onClick={removeFavorite}>
           <svg width={24} height={24} style={favorites.find(car => car.id === id) ? {fill: '#a72f2f', stroke: "#a72f2f"} : {fill: 'transparent'}}>
             <use xlinkHref={`${sprite}#icon-heart`}></use>
           </svg>

@@ -4,6 +4,7 @@ import { fetchCars } from "../redux/operations";
 import CarsListCards from "components/CarsPage/CarsListCards/CarsListCards";
 import SearchBar from "components/CarsPage/SearchBar/SearchBar";
 import { LoadMoreBtn, TextEnd } from "./Cars.styled";
+import { useCar } from "hook/useCar";
 
 const Cars = () => {
   const [filterCars, setFilter] = useState('');
@@ -11,18 +12,20 @@ const Cars = () => {
   const [limit] = useState(12);
   const prevPage = useRef(0);
   const dispatch = useDispatch();
+  const {cars} = useCar();
 
   useEffect(() => {
     if (page > 0 && page !== prevPage.current) {
         dispatch(fetchCars({ page, limit }));
-    } else {
-      setPage(1);
-    }
+    } 
 
     prevPage.current = page;
 }, [dispatch, limit, page])
 
 
+if(cars.length < 1 && page === 0) {
+  setPage(1);
+}
 
 
   return (

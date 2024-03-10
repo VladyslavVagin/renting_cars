@@ -27,12 +27,13 @@ if(cars.length < 1 && page === 0) {
   setPage(1);
 }
 
+console.log(cars);
 
   return (
     <section>
       <SearchBar setFilter={setFilter}/>
       <CarsListCards filterCars={filterCars}/>
-      {page >= 3 ? (
+      {cars.length === 32 ? (
         <TextEnd>The END of collection!</TextEnd>
       ) : (
         <LoadMoreBtn type="button" onClick={() => setPage((prev) => prev + 1)}>

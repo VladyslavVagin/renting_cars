@@ -1,13 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectCars, selectFilteredCars } from "../../../redux/selectors";
+import { selectFilteredCars } from "../../../redux/selectors";
 import { fetchFilteredCars } from "../../../redux/operations";
 import CarsCard from "../CarsCard/CarsCard";
 import { ListCars } from "./CarsListCards.styled";
 import { useEffect } from "react";
+import { useCar } from "hook/useCar";
 
 const CarsListCards = ({filterCars}) => {
   const dispatch = useDispatch();
-  const carsPerPage = useSelector(selectCars);
+  const {cars} = useCar();
   const filteredCars = useSelector(selectFilteredCars);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const CarsListCards = ({filterCars}) => {
       <ListCars>
         {filteredCars.length > 0 && filterCars !== "" ? filteredCars.map((car, index) => (
           <CarsCard car={car} key={`${car.id}-${index}`} />
-        )) : carsPerPage.map((car, index) => (
+        )) : cars.map((car, index) => (
           <CarsCard car={car} key={`${car.id}-${index}`} />
         ))}
       </ListCars>

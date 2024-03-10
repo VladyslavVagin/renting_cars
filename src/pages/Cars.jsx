@@ -8,10 +8,10 @@ import { useCar } from "hook/useCar";
 import Loader from "components/Loader/Loader";
 
 const Cars = () => {
+  const limit = 12;
   const [filterCars, setFilter] = useState('');
   const [price, setPrice] = useState('');
   const [page, setPage] = useState(0);
-  const [limit] = useState(12);
   const prevPage = useRef(0);
   const dispatch = useDispatch();
   const {cars, isLoading} = useCar();
@@ -33,7 +33,7 @@ if(cars.length < 1 && page === 0) {
     <section>
       <SearchBar setFilter={setFilter} setPrice={setPrice}/>
       <CarsListCards filterCars={filterCars} price={price}/>
-      {cars.length > 24 ? (
+      {cars.length > 24 && page === 3 ? (
         <TextEnd>The END of collection!</TextEnd>
       ) : (
         <LoadMoreBtn type="button" onClick={() => setPage((prev) => prev + 1)}>

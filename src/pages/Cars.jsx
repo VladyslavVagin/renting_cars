@@ -27,8 +27,6 @@ if(cars.length < 1 && page === 0) {
   setPage(1);
 }
 
-console.log(cars);
-
   return (
     <section>
       <SearchBar setFilter={setFilter}/>

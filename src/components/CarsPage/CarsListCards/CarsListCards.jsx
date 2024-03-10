@@ -33,7 +33,21 @@ const CarsListCards = ({ filterCars, price }) => {
   return (
     <div>
       <ListCars>
-        {filteredCars.length > 0 && filterCars !== "" ? (price === '' ? filteredCars.map((car, index) => (<CarsCard car={car} key={`${car.id}-${index}`} />)) : filteredByPriceModel.map((car, index) => (<CarsCard car={car} key={`${car.id}-${index}`} />)) ) : cars.map((car, index) => (<CarsCard car={car} key={`${car.id}-${index}`} />))}
+        {filteredCars.length > 0 && filterCars !== ""
+          ? price === ""
+            ? filteredCars.map((car, index) => (
+                <CarsCard car={car} key={`${car.id}-${index}`} />
+              ))
+            : filteredByPriceModel.map((car, index) => (
+                <CarsCard car={car} key={`${car.id}-${index}`} />
+              ))
+          : price === ""
+          ? cars.map((car, index) => (
+              <CarsCard car={car} key={`${car.id}-${index}`} />
+            ))
+          : filteredByPriceModel.map((car, index) => (
+              <CarsCard car={car} key={`${car.id}-${index}`} />
+            ))}
       </ListCars>
     </div>
   );

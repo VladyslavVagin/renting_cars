@@ -33,7 +33,7 @@ if(cars.length < 1 && page === 0) {
     <section>
       <SearchBar setFilter={setFilter} setPrice={setPrice}/>
       <CarsListCards filterCars={filterCars} price={price}/>
-      {cars.length > 24 && page === 3 ? (
+      {cars.length > 24 || page === 3 ? (
         <TextEnd>The END of collection!</TextEnd>
       ) : (
         <LoadMoreBtn type="button" onClick={() => setPage((prev) => prev + 1)}>
